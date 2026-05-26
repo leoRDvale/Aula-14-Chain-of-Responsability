@@ -34,7 +34,8 @@ public class Main {
             System.out.println("\n===== A Senha deve ter letra Maiúscula, minúscula, número, caractere especial =====");
             System.out.println("\n===== No mínimo 8 digitos, e no máximo 16 =====");
             
-
+            //login para testes: leonard
+            
             System.out.print("Digite o login: ");
             String login = sc.nextLine();
 
@@ -43,7 +44,7 @@ public class Main {
 
             Usuario usuario = new Usuario(login, senha);
 
-            // executa a cadeia
+            
             valido = loginVal.validar(usuario);
 
             if (!valido) {
