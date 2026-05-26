@@ -28,13 +28,14 @@ public class Main {
 
         boolean valido = false;
 
-        while (!valido) {
 
             System.out.println("\n===== SISTEMA DE LOGIN =====");
             System.out.println("\n===== A Senha deve ter letra Maiúscula, minúscula, número, caractere especial =====");
             System.out.println("\n===== No mínimo 8 digitos, e no máximo 16 =====");
             
             //login para testes: leonard
+
+        while (!valido) {
             
             System.out.print("Digite o login: ");
             String login = sc.nextLine();
