@@ -9,14 +9,6 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite o login: ");
-        String login = sc.nextLine();
-
-        System.out.print("Digite a senha: ");
-        String senha = sc.nextLine();
-
-        Usuario usuario = new Usuario(login, senha);
-
         Validador loginVal = new ValidadorLogin();
         Validador maiuscula = new ValidadorMaiuscula();
         Validador minuscula = new ValidadorMinuscula();
@@ -34,13 +26,29 @@ public class Main {
         tresNumeros.setProximo(min);
         min.setProximo(max);
 
+        boolean valido = false;
 
-        boolean resultado = loginVal.validar(usuario);
+        while (!valido) {
 
-        if (resultado) {
-            System.out.println("\nLogin e senha válidos!");
-        } else {
-            System.out.println("\nFalha na validação.");
+            System.out.println("\n===== SISTEMA DE LOGIN =====");
+
+            System.out.print("Digite o login: ");
+            String login = sc.nextLine();
+
+            System.out.print("Digite a senha: ");
+            String senha = sc.nextLine();
+
+            Usuario usuario = new Usuario(login, senha);
+
+            // executa a cadeia
+            valido = loginVal.validar(usuario);
+
+            if (!valido) {
+                System.out.println("\nSenha ou login inválidos.");
+                System.out.println("Tente novamente.\n");
+            } else {
+                System.out.println("\nLogin realizado com sucesso!");
+            }
         }
 
         sc.close();
